@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Kontrol Tempat Sampah</title>
+  <meta charset="UTF-8">
+  <title>Kontrol Servo</title>
 </head>
 <body>
-    <h1>Kontrol Servo Tempat Sampah</h1>
-    <form method="POST">
-        <button type="submit" name="aksi" value="buka">Buka Tutup</button>
-        <button type="submit" name="aksi" value="tutup">Tutup Servo</button>
-    </form>
+  <h2>Kontrol Servo Tempat Sampah</h2>
+  <p>Status saat ini: <strong>{{ perintah }}</strong></p>
+  <form method="post">
+    <button type="submit" name="aksi" value="buka">Buka</button>
+    <button type="submit" name="aksi" value="tutup">Tutup</button>
+  </form>
 </body>
 </html>
