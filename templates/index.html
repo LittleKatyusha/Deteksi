@@ -2,14 +2,25 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Kontrol Servo</title>
+  <title>Kontrol Servo Tempat Sampah</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <h2>Kontrol Servo Tempat Sampah</h2>
-  <p>Status saat ini: <strong>{{ perintah }}</strong></p>
-  <form method="post">
-    <button type="submit" name="aksi" value="buka">Buka</button>
-    <button type="submit" name="aksi" value="tutup">Tutup</button>
-  </form>
+  <div class="container">
+    <h2>Kontrol Servo Tempat Sampah</h2>
+    <p>Status saat ini:
+      <span id="status" class="status {{ 'buka' if perintah == 'buka' else 'tutup' }}">{{ perintah }}</span>
+    </p>
+    <form method="post">
+      <label for="jenis">Pilih Jenis Sampah:</label><br>
+      <select name="jenis" id="jenis">
+        <option value="organik">Organik</option>
+        <option value="anorganik">Anorganik</option>
+        <option value="lainnya">Lainnya</option>
+      </select><br>
+      <button type="submit">Kirim</button>
+    </form>
+  </div>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
