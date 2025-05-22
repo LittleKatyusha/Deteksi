@@ -6,5 +6,5 @@ setInterval(() => {
       const statusElem = document.getElementById("status");
       statusElem.textContent = data.perintah;
       statusElem.className = "status " + data.perintah;
-    });
-}, 5000);
+   });
+}, 5000);
