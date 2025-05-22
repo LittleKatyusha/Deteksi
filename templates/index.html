@@ -1,26 +1,44 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Kontrol Servo Tempat Sampah</title>
+  <meta charset="UTF-8" />
+  <title>Kontrol Servo</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
   <div class="container">
     <h2>Kontrol Servo Tempat Sampah</h2>
-    <p>Status saat ini:
-      <span id="status" class="status {{ 'buka' if perintah == 'buka' else 'tutup' }}">{{ perintah }}</span>
-    </p>
+    <p>Status saat ini: <strong>{{ perintah }}</strong></p>
     <form method="post">
-      <label for="jenis">Pilih Jenis Sampah:</label><br>
-      <select name="jenis" id="jenis">
+      <label for="jenis">Pilih Jenis Sampah:</label>
+      <select name="jenis" id="jenis" required>
+        <option value="">--Pilih--</option>
         <option value="organik">Organik</option>
         <option value="anorganik">Anorganik</option>
         <option value="lainnya">Lainnya</option>
-      </select><br>
+      </select>
       <button type="submit">Kirim</button>
     </form>
+
+    <h3>Riwayat Perintah</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Jenis Sampah</th>
+          <th>Perintah</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in riwayat %}
+        <tr>
+          <td>{{ loop.index }}</td>
+          <td>{{ item.jenis }}</td>
+          <td>{{ item.perintah }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
-  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
