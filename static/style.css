@@ -1,44 +1,62 @@
+/* Reset margin & padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body & container */
 body, html {
-  margin: 0; padding: 0; height: 100%;
+  height: 100%;
   font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
+  background-color: #f0f0f0;
 }
 
 .container {
-  max-width: 500px;
-  margin: 40px auto;
-  padding: 20px;
-  background: white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  border-radius: 8px;
+  max-width: 400px;
+  margin: auto;
+  background-color: white;
+  padding: 30px 20px;
+  margin-top: 10vh;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   text-align: center;
 }
 
-form {
-  margin-bottom: 20px;
+/* Label & select */
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  text-align: left;
 }
 
-select, button {
-  padding: 10px;
-  font-size: 16px;
-  margin-top: 10px;
+select {
   width: 100%;
-  box-sizing: border-box;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
   border-radius: 5px;
   border: 1px solid #ccc;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
+/* Button styling */
+button {
+  background-color: #4CAF50;  /* Warna dasar */
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
-th, td {
-  padding: 8px 12px;
-  border: 1px solid #ddd;
+button:hover {
+  background-color: #45a049;  /* Warna saat hover */
 }
 
-th {
-  background-color: #f2f2f2;
+button:active {
+  background-color: #2e7031;  /* Warna saat klik */
+  transform: scale(0.98);     /* Efek tombol mengecil saat klik */
 }
