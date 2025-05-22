@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 perintah_terakhir = "tutup"
 
